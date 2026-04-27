@@ -2,23 +2,33 @@ package com.example.project5;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        RecyclerView recyclerView = findViewById(R.id.pizzaRecyclerView);
+
+        List<PizzaOption> list = new ArrayList<>();
+
+        list.add(new PizzaOption("Chicago Deluxe", R.drawable.deluxe));
+        list.add(new PizzaOption("Chicago BBQ Chicken", R.drawable.bbq));
+        list.add(new PizzaOption("Chicago Meatzza", R.drawable.meatzza));
+        list.add(new PizzaOption("Chicago Build Your Own", R.drawable.byo));
+        list.add(new PizzaOption("NY Deluxe", R.drawable.deluxe));
+        list.add(new PizzaOption("NY BBQ Chicken", R.drawable.bbq));
+        list.add(new PizzaOption("NY Meatzza", R.drawable.meatzza));
+        list.add(new PizzaOption("NY Build Your Own", R.drawable.byo));
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new PizzaAdapter(this, list));
     }
 }
