@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/orderNumberText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/order_number" />
+
+        <TextView
+            android:id="@+id/numPizzasText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/num_pizzas" />
+
+        <ListView
+            android:id="@+id/currentOrderList"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:choiceMode="singleChoice" />
+
+        <TextView
+            android:id="@+id/subtotalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subtotal" />
+
+        <TextView
+            android:id="@+id/taxText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tax" />
+
+        <TextView
+            android:id="@+id/totalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/total" />
+
+        <Button
+            android:id="@+id/removePizzaButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remove_pizza" />
+
+        <Button
+            android:id="@+id/clearOrderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_order" />
+
+        <Button
+            android:id="@+id/placeOrderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/place_order" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
+
+    </LinearLayout>
+</ScrollView>

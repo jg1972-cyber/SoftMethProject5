@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Project 5</string>
+    <string name="pizza_image">Pizza image</string>
+    <string name="pizza_type">Pizza Type</string>
+    <string name="size">Size</string>
+    <string name="create_pizza">Create Pizza</string>
+    <string name="crust">Crust</string>
+    <string name="default_price">$0.00</string>
+    <string name="add_topping">Add Topping</string>
+    <string name="remove_topping">Remove Topping</string>
+    <string name="add_to_order">Add to Order</string>
+    <string name="back">Back</string>
+    <string name="order_number">Order Number</string>
+    <string name="num_pizzas">Number of Pizzas</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Tax</string>
+    <string name="total">Total</string>
+    <string name="remove_pizza">Remove Pizza</string>
+    <string name="clear_order">Clear Order</string>
+    <string name="place_order">Place Order</string>
+    <string name="store_orders">Store Orders</string>
+    <string name="show_order">Show Order</string>
+    <string name="order_details">Order Details</string>
+    <string name="cancel_order">Cancel Order</string>
 </resources>

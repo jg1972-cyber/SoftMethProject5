@@ -13,7 +13,7 @@ public class OrdersActivity extends AppCompatActivity {
 
     private Spinner orderSpinner;
     private TextView orderDetailsText;
-    private Button showOrderButton, cancelOrderButton, exportOrdersButton, backButton;
+    private Button showOrderButton, cancelOrderButton, backButton;
 
     private ArrayAdapter<Integer> orderNumberAdapter;
 
@@ -27,7 +27,6 @@ public class OrdersActivity extends AppCompatActivity {
 
         showOrderButton = findViewById(R.id.showOrderButton);
         cancelOrderButton = findViewById(R.id.cancelOrderButton);
-        exportOrdersButton = findViewById(R.id.exportOrdersButton);
         backButton = findViewById(R.id.backButton);
 
         orderNumberAdapter = new ArrayAdapter<>(
@@ -37,7 +36,6 @@ public class OrdersActivity extends AppCompatActivity {
 
         showOrderButton.setOnClickListener(v -> showOrderDetails());
         cancelOrderButton.setOnClickListener(v -> cancelOrder());
-        exportOrdersButton.setOnClickListener(v -> exportOrders());
         backButton.setOnClickListener(v -> finish());
 
         refreshOrders();
@@ -89,22 +87,6 @@ public class OrdersActivity extends AppCompatActivity {
         if (removed) {
             showMessage("Order Canceled", "Order #" + selectedOrderNumber + " was canceled.");
             refreshOrders();
-        }
-    }
-
-    private void exportOrders() {
-        StoreOrders storeOrders = AppSingleton.getInstance().getStoreOrders();
-
-        if (storeOrders == null || storeOrders.isEmpty()) {
-            showMessage("No Orders", "There are no orders to export.");
-            return;
-        }
-
-        try {
-            storeOrders.exportOrders("orders.txt");
-            showMessage("Export Successful", "Orders exported to orders.txt.");
-        } catch (IOException e) {
-            showMessage("Export Failed", "Could not export orders.");
         }
     }
 

@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ChicagoActivity" />
+        <activity android:name=".NYActivity" />
+        <activity android:name=".CurrentOrderActivity" />
+        <activity android:name=".OrdersActivity" />
     </application>
 
 </manifest>

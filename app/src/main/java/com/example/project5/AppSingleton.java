@@ -1,7 +1,7 @@
-package org.example.project5;
+package com.example.project5;
 
-import org.example.project5.backend.Order;
-import org.example.project5.backend.StoreOrders;
+import com.example.project5.backend.Order;
+import com.example.project5.backend.StoreOrders;
 
 public class AppSingleton {
 
