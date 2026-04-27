@@ -7,8 +7,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="28sp"
+        android:text="@string/select_pizza"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="12dp" />
@@ -20,15 +20,10 @@
         android:layout_weight="1" />
 
     <Button
-        android:id="@+id/currentOrderButton"
-        android:layout_width="match_parent"
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/current_order" />
-
-    <Button
-        android:id="@+id/ordersButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/orders_placed" />
+        android:text="@string/back"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

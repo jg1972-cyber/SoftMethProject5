@@ -1,25 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_order"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/orderNumberText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/order_number" />
-
-        <TextView
-            android:id="@+id/numPizzasText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/num_pizzas" />
+            android:text="@string/order_number_default" />
 
         <ListView
             android:id="@+id/currentOrderList"
@@ -28,46 +35,46 @@
             android:choiceMode="singleChoice" />
 
         <TextView
-            android:id="@+id/subtotalText"
-            android:layout_width="match_parent"
+            android:id="@+id/numPizzasText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/subtotal" />
+            android:text="@string/zero_count" />
+
+        <TextView
+            android:id="@+id/subtotalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zero_price" />
 
         <TextView
             android:id="@+id/taxText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tax" />
+            android:text="@string/zero_price" />
 
         <TextView
             android:id="@+id/totalText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/total" />
+            android:text="@string/zero_price" />
 
         <Button
             android:id="@+id/removePizzaButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/remove_pizza" />
+            android:text="@string/remove_selected_pizza" />
 
         <Button
             android:id="@+id/clearOrderButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clear_order" />
 
         <Button
             android:id="@+id/placeOrderButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/place_order" />
-
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/back" />
 
     </LinearLayout>
 </ScrollView>

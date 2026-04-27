@@ -12,7 +12,7 @@ public class ChicagoActivity extends AppCompatActivity {
     private TextView crustText, priceText;
     private ListView selectedToppingsList;
     private Button createButton, addToppingButton, removeToppingButton, addToOrderButton, backButton;
-
+    private ImageView pizzaImageView;
     private Pizza currentPizza;
     private ArrayAdapter<Topping> selectedToppingsAdapter;
 
@@ -21,6 +21,7 @@ public class ChicagoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chicago);
 
+        pizzaImageView = findViewById(R.id.pizzaImageView);
         pizzaTypeSpinner = findViewById(R.id.pizzaTypeSpinner);
         sizeSpinner = findViewById(R.id.sizeSpinner);
         availableToppingsSpinner = findViewById(R.id.availableToppingsSpinner);
@@ -42,7 +43,39 @@ public class ChicagoActivity extends AppCompatActivity {
         addToOrderButton.setOnClickListener(v -> addToOrder());
         backButton.setOnClickListener(v -> finish());
 
-        refreshView();
+        String selectedPizza = getIntent().getStringExtra("pizzaType");
+
+        if (selectedPizza != null) {
+            selectedPizza = selectedPizza
+                    .replace("Chicago ", "")
+                    .replace("NY ", "");
+
+            ArrayAdapter adapter = (ArrayAdapter) pizzaTypeSpinner.getAdapter();
+            int position = adapter.getPosition(selectedPizza);
+
+            if (position >= 0) {
+                pizzaTypeSpinner.setSelection(position);
+                createPizza();
+            }
+        } else {
+            refreshView();
+        }
+    }
+    private int getPizzaImageResource() {
+        String type = pizzaTypeSpinner.getSelectedItem().toString();
+
+        switch (type) {
+            case "Deluxe":
+                return R.drawable.deluxe;
+            case "BBQ Chicken":
+                return R.drawable.bbq;
+            case "Meatzza":
+                return R.drawable.meatzza;
+            case "Build Your Own":
+                return R.drawable.byo;
+            default:
+                return R.drawable.byo;
+        }
     }
 
     private void setupSpinners() {
@@ -143,10 +176,12 @@ public class ChicagoActivity extends AppCompatActivity {
         if (currentPizza == null) {
             crustText.setText("");
             priceText.setText("$0.00");
+            pizzaImageView.setImageResource(0);
             selectedToppingsAdapter.notifyDataSetChanged();
             return;
         }
 
+        pizzaImageView.setImageResource(getPizzaImageResource());
         selectedToppingsAdapter.addAll(currentPizza.getToppings());
         crustText.setText(String.valueOf(currentPizza.getCrust()));
         priceText.setText("$" + String.format("%.2f", currentPizza.price()));
