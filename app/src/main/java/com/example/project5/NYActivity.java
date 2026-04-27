@@ -6,7 +6,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.project5.backend.*;
 
-public class NYActivity extends ChicagoActivity {
+public class NYActivity extends AppCompatActivity {
 
     private Spinner pizzaTypeSpinner, sizeSpinner, availableToppingsSpinner;
     private TextView crustText, priceText;
@@ -19,7 +19,7 @@ public class NYActivity extends ChicagoActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chicago);
+        setContentView(R.layout.activity_ny);
 
         pizzaTypeSpinner = findViewById(R.id.pizzaTypeSpinner);
         sizeSpinner = findViewById(R.id.sizeSpinner);
