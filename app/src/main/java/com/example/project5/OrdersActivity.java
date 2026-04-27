@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.project5.backend.Order;
 import com.example.project5.backend.StoreOrders;
 
-import java.io.IOException;
-
 public class OrdersActivity extends AppCompatActivity {
 
     private Spinner orderSpinner;
